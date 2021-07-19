@@ -62,7 +62,7 @@ model *Wolf2000_Glycolytic_Oscillations()
   k10 = 375;
   atot = 4;
   ntot = 1;
-  n = 4;
+  n = 3.7;
   ki = 1;
 
   // Display Names:
