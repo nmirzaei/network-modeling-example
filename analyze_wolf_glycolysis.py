@@ -10,5 +10,5 @@ import roadrunner
 
 r = te.loads("https://www.ebi.ac.uk/biomodels/model/download/BIOMD0000000206.2?filename=BIOMD0000000206_url.xml")
 
-r.simulate(0,5,1000)
+r.simulate(0,1,500)
 r.plot()
