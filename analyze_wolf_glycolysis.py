@@ -108,57 +108,8 @@ model *Wolf2000_Glycolytic_Oscillations()
   s6 is "Acetaldehyde";
   s6o is "extracellular acetaldehyde";
 
-  // CV terms:
-  s1 identity "http://identifiers.org/obo.chebi/CHEBI:17234",
-              "http://identifiers.org/kegg.compound/C00293"
-  at_ identity "http://identifiers.org/obo.chebi/CHEBI:15422",
-               "http://identifiers.org/kegg.compound/C00002"
-  s2 identity "http://identifiers.org/obo.chebi/CHEBI:16905",
-              "http://identifiers.org/kegg.compound/C05378"
-  s3 part "http://identifiers.org/obo.chebi/CHEBI:16108",
-          "http://identifiers.org/obo.chebi/CHEBI:29052",
-          "http://identifiers.org/kegg.compound/C00111",
-          "http://identifiers.org/kegg.compound/C00118"
-  na identity "http://identifiers.org/obo.chebi/CHEBI:15846",
-              "http://identifiers.org/kegg.compound/C00003"
-  s4 identity "http://identifiers.org/obo.chebi/CHEBI:17794",
-              "http://identifiers.org/kegg.compound/C00197"
-  s5 identity "http://identifiers.org/kegg.compound/C00022",
-              "http://identifiers.org/chebi/CHEBI:32816"
-  s5 identity "http://identifiers.org/obo.chebi/CHEBI:15361"
-  s6 identity "http://identifiers.org/obo.chebi/CHEBI:15343",
-              "http://identifiers.org/kegg.compound/C00084"
-  s6o identity "http://identifiers.org/obo.chebi/CHEBI:15343",
-               "http://identifiers.org/kegg.compound/C00084"
-  v1 part "http://identifiers.org/kegg.reaction/R00756",
-          "http://identifiers.org/kegg.reaction/R00299"
-  v1 part "http://identifiers.org/ec-code/2.7.1.11",
-          "http://identifiers.org/ec-code/5.3.1.9"
-  v2 identity "http://identifiers.org/ec-code/4.1.2.13",
-              "http://identifiers.org/kegg.reaction/R01070"
-  v3 part "http://identifiers.org/ec-code/2.7.2.3",
-          "http://identifiers.org/ec-code/1.2.1.12"
-  v4 part "http://identifiers.org/kegg.reaction/R00658",
-          "http://identifiers.org/kegg.reaction/R00200"
-  v4 part "http://identifiers.org/ec-code/2.7.1.40"
-  v5 hypernym "http://identifiers.org/ec-code/4.1.1.1",
-              "http://identifiers.org/kegg.reaction/R00224"
-  v7 hypernym "http://identifiers.org/obo.go/GO:0006754"
-  v8 part "http://identifiers.org/kegg.reaction/R05679"
-  v9 hypernym "http://identifiers.org/obo.go/GO:0046187"
-  v6 hypernym "http://identifiers.org/ec-code/1.1.1.71",
-              "http://identifiers.org/kegg.reaction/R00754"
-  v0 hypernym "http://identifiers.org/obo.go/GO:0046323"
 end
 
-Wolf2000_Glycolytic_Oscillations is "Wolf2000_Glycolytic_Oscillations"
-
-Wolf2000_Glycolytic_Oscillations model_entity_is "http://identifiers.org/biomodels.db/MODEL3352181362"
-Wolf2000_Glycolytic_Oscillations model_entity_is "http://identifiers.org/biomodels.db/BIOMD0000000206"
-Wolf2000_Glycolytic_Oscillations description "http://identifiers.org/pubmed/10692304"
-Wolf2000_Glycolytic_Oscillations taxon "http://identifiers.org/taxonomy/4932"
-Wolf2000_Glycolytic_Oscillations hypernym "http://identifiers.org/obo.go/GO:0006096"
-Wolf2000_Glycolytic_Oscillations identity "http://identifiers.org/kegg.pathway/sce00010"
 """)    
 r.simulate(0,1,500)
 r.plot()
