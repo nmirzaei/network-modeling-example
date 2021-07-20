@@ -12,24 +12,18 @@ r = te.loada("""
 // Created by libAntimony v2.12.0.3
 model *Wolf2000_Glycolytic_Oscillations()
 
-  // Compartments and Species:
-  compartment compartment_;
-  species s1 in compartment_, at_ in compartment_, s2 in compartment_, s3 in compartment_;
-  species na in compartment_, s4 in compartment_, s5 in compartment_, s6 in compartment_;
-  species s6o in compartment_;
-
   // Reactions:
-  v1: s1 + 2 at_ -> s2; compartment_*k1*s1*at_/(1 + (at_/ki)^n);
-  v2: s2 -> 2 s3; compartment_*k2*s2;
-  v3: s3 + na -> s4 + at_; compartment_*((k31*k32*s3*na*(atot - at_) - k33*k34*s4*at_*(ntot - na))/(k33*(ntot - na) + k32*(atot - at_)));
-  v4: s4 -> s5 + at_; compartment_*k4*s4*(atot - at_);
-  v5: s5 -> s6; compartment_*k5*s5;
-  v7: at_ -> ; compartment_*k7*at_;
-  v8: s3 -> na; compartment_*k8*s3*(ntot - na);
-  v9: s6o -> ; compartment_*k9*s6o;
-  v10: s6 -> 0.1 s6o; compartment_*k10*(s6 - s6o);
-  v6: s6 -> na; compartment_*k6*s6*(ntot - na);
-  v0:  -> s1; compartment_*k0;
+  v1: s1 + 2 at_ -> s2; k1*s1*at_/(1 + (at_/ki)^n);
+  v2: s2 -> 2 s3; k2*s2;
+  v3: s3 + na -> s4 + at_; ((k31*k32*s3*na*(atot - at_) - k33*k34*s4*at_*(ntot - na))/(k33*(ntot - na) + k32*(atot - at_)));
+  v4: s4 -> s5 + at_; k4*s4*(atot - at_);
+  v5: s5 -> s6; k5*s5;
+  v7: at_ -> ; k7*at_;
+  v8: s3 -> na; k8*s3*(ntot - na);
+  v9: s6o -> ; k9*s6o;
+  v10: s6 -> 0.1 s6o; k10*(s6 - s6o);
+  v6: s6 -> na; k6*s6*(ntot - na);
+  v0:  -> s1; k0;
 
   // Species initializations:
   s1 = 1;
