@@ -15,10 +15,10 @@ model *Wolf2000_Glycolytic_Oscillations()
   // Reactions:
   v1: s1 + 2 atp -> s2; k1*s1*atp/(1 + (atp/ki)^n);
   v2: s2 -> 2 s3; k2*s2;
-  v3: s3 + nad + adp + pi -> s4 + atp; ((k31*k32*s3*nad*(atot - atp) - k33*k34*s4*atp*(ntot - nad))/(k33*(ntot - nad) + k32*(atot - atp)));
-  v4: s4 + adp + pi -> s5 + atp; k4*s4*(atot - atp);
+  v3: s3 + nad + adp + $pIn -> s4 + atp; ((k31*k32*s3*nad*(atot - atp) - k33*k34*s4*atp*(ntot - nad))/(k33*(ntot - nad) + k32*(atot - atp)));
+  v4: s4 + adp + pIn -> s5 + atp; k4*s4*(atot - atp);
   v5: s5 -> s6; k5*s5;
-  v7: atp -> adp + pi; k7*atp;
+  v7: atp -> adp + pIn; k7*atp;
   v8: s3 -> nad; k8*s3*(ntot - nad);
   v9: s6o -> ; k9*s6o;
   v10: s6 -> 0.1 s6o; k10*(s6 - s6o);
@@ -29,7 +29,7 @@ model *Wolf2000_Glycolytic_Oscillations()
   s1 = 1;
   atp = 2;
   adp = atot - atp
-  pi = 1000
+  pIn = 1000
   s2 = 5;
   s3 = 0.6;
   nad = 0.6;
