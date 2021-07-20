@@ -13,12 +13,12 @@ r = te.loada("""
 model *Wolf2000_Glycolytic_Oscillations()
 
   // Reactions:
-  v1: s1 + 2 at_ -> s2; k1*s1*at_/(1 + (at_/ki)^n);
+  v1: s1 + 2 atp -> s2; k1*s1*atp/(1 + (atp/ki)^n);
   v2: s2 -> 2 s3; k2*s2;
-  v3: s3 + na -> s4 + at_; ((k31*k32*s3*na*(atot - at_) - k33*k34*s4*at_*(ntot - na))/(k33*(ntot - na) + k32*(atot - at_)));
-  v4: s4 -> s5 + at_; k4*s4*(atot - at_);
+  v3: s3 + na -> s4 + atp; ((k31*k32*s3*na*(atot - atp) - k33*k34*s4*atp*(ntot - na))/(k33*(ntot - na) + k32*(atot - atp)));
+  v4: s4 -> s5 + atp; k4*s4*(atot - atp);
   v5: s5 -> s6; k5*s5;
-  v7: at_ -> ; k7*at_;
+  v7: atp -> ; k7*atp;
   v8: s3 -> na; k8*s3*(ntot - na);
   v9: s6o -> ; k9*s6o;
   v10: s6 -> 0.1 s6o; k10*(s6 - s6o);
@@ -27,7 +27,7 @@ model *Wolf2000_Glycolytic_Oscillations()
 
   // Species initializations:
   s1 = 1;
-  at_ = 2;
+  atp = 2;
   s2 = 5;
   s3 = 0.6;
   na = 0.6;
@@ -63,7 +63,7 @@ model *Wolf2000_Glycolytic_Oscillations()
   substance is "milli mole";
   time_unit is "min";
   s1 is "Glucose";
-  at_ is "ATP";
+  atp is "ATP";
   s2 is "F16P";
   s3 is "Triose_Gly3Phos_DHAP";
   na is "NAD";
