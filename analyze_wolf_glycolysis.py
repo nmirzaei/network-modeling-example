@@ -56,7 +56,7 @@ model *Wolf2000_Glycolytic_Oscillations()
   n = 4;
   ki = 1;
 
-  // Display nadmes:
+  // Display names:
   substance is "milli mole";
   time_unit is "min";
   s1 is "Glucose";
