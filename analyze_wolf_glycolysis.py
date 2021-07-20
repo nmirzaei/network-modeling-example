@@ -15,14 +15,14 @@ model *Wolf2000_Glycolytic_Oscillations()
   // Reactions:
   v1: s1 + 2 atp -> s2; k1*s1*atp/(1 + (atp/ki)^n);
   v2: s2 -> 2 s3; k2*s2;
-  v3: s3 + na -> s4 + atp; ((k31*k32*s3*na*(atot - atp) - k33*k34*s4*atp*(ntot - na))/(k33*(ntot - na) + k32*(atot - atp)));
+  v3: s3 + nad -> s4 + atp; ((k31*k32*s3*nad*(atot - atp) - k33*k34*s4*atp*(ntot - nad))/(k33*(ntot - nad) + k32*(atot - atp)));
   v4: s4 -> s5 + atp; k4*s4*(atot - atp);
   v5: s5 -> s6; k5*s5;
   v7: atp -> ; k7*atp;
-  v8: s3 -> na; k8*s3*(ntot - na);
+  v8: s3 -> nad; k8*s3*(ntot - nad);
   v9: s6o -> ; k9*s6o;
   v10: s6 -> 0.1 s6o; k10*(s6 - s6o);
-  v6: s6 -> na; k6*s6*(ntot - na);
+  v6: s6 -> nad; k6*s6*(ntot - nad);
   v0:  -> s1; k0;
 
   // Species initializations:
@@ -30,7 +30,7 @@ model *Wolf2000_Glycolytic_Oscillations()
   atp = 2;
   s2 = 5;
   s3 = 0.6;
-  na = 0.6;
+  nad = 0.6;
   s4 = 0.7;
   s5 = 8;
   s6 = 0.08;
@@ -56,14 +56,14 @@ model *Wolf2000_Glycolytic_Oscillations()
   n = 4;
   ki = 1;
 
-  // Display Names:
+  // Display nadmes:
   substance is "milli mole";
   time_unit is "min";
   s1 is "Glucose";
   atp is "ATP";
   s2 is "F16P";
   s3 is "Triose_Gly3Phos_DHAP";
-  na is "NAD";
+  nad is "NAD";
   s4 is "3PG";
   s5 is "Pyruvate";
   s6 is "Acetaldehyde";
