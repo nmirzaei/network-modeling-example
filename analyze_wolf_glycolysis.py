@@ -46,14 +46,14 @@ model *Wolf2000_Glycolytic_Oscillations()
   compartment_ = 1;
 
   // Variable initializations:
-  k0 = 50;
+  k0 = 4.82;
   k1 = 550;
   k2 = 9.8;
   k31 = 323.8;
   k33 = 57823.1;
   k32 = 76411.1;
   k34 = 23.7;
-  k4 = 80;
+  k4 = 77.77;
   k5 = 9.7;
   k6 = 2000;
   k7 = 31.17;
