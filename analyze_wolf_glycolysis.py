@@ -13,12 +13,12 @@ r = te.loada("""
 model *Wolf2000_Glycolytic_Oscillations()
 
   // Reactions:
-  v1: s1 + 2 atp -> s2 + 2 adp + 2 pIn; k1*s1*atp/(1 + (atp/ki)^n);
+  v1: s1 + 2 atp -> s2 + 2 adp + 2 $pIn; k1*s1*atp/(1 + (atp/ki)^n);
   v2: s2 -> 2 s3; k2*s2;
   v3: s3 + nad + adp + $pIn -> s4 + atp; ((k31*k32*s3*nad*(atot - atp) - k33*k34*s4*atp*(ntot - nad))/(k33*(ntot - nad) + k32*(atot - atp)));
-  v4: s4 + adp + pIn -> s5 + atp; k4*s4*(atot - atp);
+  v4: s4 + adp + $pIn -> s5 + atp; k4*s4*(atot - atp);
   v5: s5 -> s6; k5*s5;
-  v7: atp -> adp + pIn; k7*atp;
+  v7: atp -> adp + $pIn; k7*atp;
   v8: s3 -> nad; k8*s3*(ntot - nad);
   v9: s6o -> ; k9*s6o;
   v10: s6 -> 0.1 s6o; k10*(s6 - s6o);
