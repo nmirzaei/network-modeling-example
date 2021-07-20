@@ -55,10 +55,10 @@ model *Wolf2000_Glycolytic_Oscillations()
   k34 = 23.7;
   k4 = 77.77;
   k5 = 9.7;
-  k6 = 2000;
+  k6 = 2140;
   k7 = 31.17;
   k8 = 85.7;
-  k9 = 80;
+  k9 = 180;
   k10 = 375;
   atot = 4;
   ntot = 1;
