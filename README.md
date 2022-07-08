@@ -1,11 +1,11 @@
-# network-modeling-2021-example
+# network-modeling-2022-example
 
 A python script that analyzes and changes the Wolf Glycolysis model, for demonstration purposes.
 
 Excercise:
 
 <ol>
-  <li>Visit https://github.com/luciansmith/network-modeling-2021-example
+  <li>Visit https://github.com/luciansmith/network-modeling-2022-example
   <li>Copy the python script into colab and run it.<br>
   (Note: you'll probably need a '!pip install tellurium' added at the top.)
   <li>It doesn't oscillate!  Did it use to?  Check out the very first version and check.
